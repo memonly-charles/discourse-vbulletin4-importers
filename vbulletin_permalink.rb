@@ -10,7 +10,7 @@
 # Example 2
 # http://your.vbulletindomain.com/forums/f10/some-thread-title-here-51689/
 #
-# Normalization 2. This is for the above example. Add this one first (order of normalizations is important!)
+# Normalization 2. This is for the above example. Add this one normalization second (order of normalizations is important!)
 # /(forums)\/f[0-9]+\/.+-([0-9]+)/\1\2
 
 require File.expand_path(File.dirname(__FILE__) + "/base.rb")
