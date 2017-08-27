@@ -16,9 +16,9 @@ class ImportScripts::VBulletin < ImportScripts::Base
   def permalink_everything
     puts "importing permalinks"
     current_count = 0
-    total_count = Topic.where('id < 1073741824').count
+    total_count = Topic.count
     Topic.find_each do |topic|
-      next if topic.id >= 2**30 #ids starting with 1073741824 are private messages, ensure we don't get those
+      next if topic.archetype == Archetype.private_message #ids starting with 1073741824 are private messages, ensure we don't get those
       current_count += 1
       print_status current_count, total_count
       old_topic_id = topic.custom_fields["import_id"]
